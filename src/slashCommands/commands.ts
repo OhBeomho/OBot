@@ -2,10 +2,11 @@ import ping from "./ping"
 import avatar from "./avatar"
 import talkpoints from "./talkpoints"
 import help from "./help"
+import leaderboard from "./leaderboard"
 import { Collection } from "discord.js"
 import SlashCommandData from "./SlashCommandData"
 
-const commands = [ping, avatar, talkpoints, help]
+const commands = [ping, avatar, talkpoints, help, leaderboard]
 const collection = new Collection<string, SlashCommandData>()
 
 for (let command of commands)

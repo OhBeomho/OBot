@@ -3,7 +3,7 @@ import { Client, Events, GatewayIntentBits, REST, Routes } from "discord.js"
 import slashCommands from "./slashCommands/commands"
 import chatCommands from "./chatCommands/commands"
 import connect from "./db/connect"
-import User from "./schemas/User"
+import Member from "./schemas/Member"
 
 const { TOKEN, APP_ID, DB_URI, DB_NAME } = process.env
 
@@ -54,19 +54,19 @@ client.on(Events.MessageCreate, async (message) => {
   const user = message.author
 
   try {
-    const userData = await User.findOne({ tag: user.tag })
+    const member = await Member.findOne({ tag: user.tag, guildId: message.guildId })
 
-    if (!userData) {
-      await User.create({
+    if (!member) {
+      await Member.create({
         tag: user.tag,
         guildId: message.guildId
       })
       return
     }
 
-    await User.findOneAndUpdate(
-      { tag: user.tag },
-      { $set: { talkPoints: userData.talkPoints + 1 } }
+    await Member.findOneAndUpdate(
+      { tag: user.tag, guildId: message.guildId },
+      { $set: { talkPoints: member.talkPoints + 1 } }
     )
   } catch (err) {
     console.error(err)
