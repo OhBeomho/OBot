@@ -52,6 +52,7 @@ client.on(Events.MessageCreate, async (message) => {
   }
 
   const user = message.author
+  if (user.bot) return
 
   try {
     const member = await Member.findOne({ tag: user.tag, guildId: message.guildId })

@@ -1,5 +1,4 @@
-# Update 1.0.1
+# Update 1.0.2
 
 ## Whats new?
-- Fixed t-points bug.
-- Leaderboard command added.
+- Now bots cannot gain t-points.
