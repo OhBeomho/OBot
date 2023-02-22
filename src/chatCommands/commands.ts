@@ -1,8 +1,8 @@
 import { Collection, Message } from "discord.js"
 import clean from "./clean"
-import kick from "./kick"
+import kickmany from "./kickmany"
 
-const commands = [clean, kick]
+const commands = [clean, kickmany]
 const collection = new Collection<string, (message: Message) => Promise<void>>()
 
 for (let command of commands) {

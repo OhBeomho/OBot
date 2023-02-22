@@ -6,6 +6,7 @@ import connect from "./db/connect"
 import Member from "./schemas/Member"
 
 const { TOKEN, APP_ID, DB_URI, DB_NAME } = process.env
+const PREFIX = "."
 
 const client = new Client({
   intents: [
@@ -33,7 +34,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
 client.on(Events.MessageCreate, async (message) => {
   if (!message.inGuild()) return
-  else if (message.content.startsWith(".")) {
+  else if (message.content.startsWith(PREFIX)) {
     const firstWord = message.content.split(/\s{1,}/)[0]
     const command = chatCommands.get(firstWord.substring(1, firstWord.length))
 
@@ -74,6 +75,8 @@ client.on(Events.MessageCreate, async (message) => {
   }
 })
 
+client.on(Events.ClientReady, () => console.log("Bot is ready."))
+
 async function main() {
   try {
     await rest.put(Routes.applicationCommands(String(APP_ID)), {
@@ -82,7 +85,6 @@ async function main() {
     console.log("Registered slash commands.")
 
     client.login(TOKEN)
-    console.log("Logged in")
   } catch (err) {
     console.error(err)
   }

@@ -1,4 +1,5 @@
-# Update 1.0.2
+# Update 1.0.3
 
 ## Whats new?
-- Now bots cannot gain t-points.
+- Changed _.kick_ to _.kickmany_
+- Slash command _/kick_, _/version_ added.

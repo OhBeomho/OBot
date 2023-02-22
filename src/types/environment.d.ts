@@ -6,6 +6,7 @@ declare global {
       APP_ID: string
       DB_URI: string
       DB_NAME: string
+      VERSION: string
     }
   }
 }
