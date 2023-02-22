@@ -13,7 +13,7 @@ export default {
     const kickMembers = message.mentions.members
 
     if (!kickMembers.size) {
-      await message.reply("킥할 대상을 한 명 이상 선택해 주세요.")
+      await message.reply("추방할 대상을 한 명 이상 선택해 주세요.")
     } else if (kickMembers.has(message.author.id)) {
       await message.reply("본인을 추방할 수 없습니다.")
     } else {
