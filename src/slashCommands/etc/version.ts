@@ -2,8 +2,8 @@ import "dotenv/config"
 import { CommandInteraction, EmbedBuilder, SlashCommandBuilder } from "discord.js"
 
 const updateText = `**업데이트 내용**
-- 채팅 명령어 kick 을 kick-many 로 이름 변경
-- 슬래시 명령어 kick, version 추가`
+- 역할 관련 슬래시 커맨드 추가
+- /help 를 /list 로 이름 변경`
 
 export default {
   data: new SlashCommandBuilder()
