@@ -13,6 +13,7 @@ const roleText = `**슬래시 명령어**
 /delete-role - 역할을 삭제합니다.
 /add-role - 사용자에게 역할을 추가합니다.
 /remove-role - 사용자에게서 역할을 제거합니다.
+/role-color - 역할의 색상을 변경합니다.
 
 **채팅 명령어**
 없음`
