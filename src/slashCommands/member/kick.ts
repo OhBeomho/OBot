@@ -9,7 +9,7 @@ export default {
   data: new SlashCommandBuilder()
     .setName("kick")
     .setDescription("한 명을 추방합니다. 추방 사유를 정할 수 있습니다.")
-    .addUserOption((option) => option.setName("user").setDescription("추방할 사용자"))
+    .addUserOption((option) => option.setName("user").setDescription("추방할 사용자").setRequired(true))
     .addStringOption((option) => option.setName("reason").setDescription("추방 사유")),
   async execute(interaction: CommandInteraction) {
     if (!interaction.inGuild()) return

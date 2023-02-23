@@ -1,5 +1,5 @@
 import { CommandInteraction, EmbedBuilder, SlashCommandBuilder } from "discord.js"
-import { getLeaderboard } from "../schemas/Member"
+import { getLeaderboard } from "../../schemas/Member"
 
 export default {
   data: new SlashCommandBuilder()

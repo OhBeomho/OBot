@@ -1,5 +1,5 @@
 import { CommandInteraction, SlashCommandBuilder, EmbedBuilder } from "discord.js"
-import Member, { getRank } from "../schemas/Member"
+import Member, { getRank } from "../../schemas/Member"
 
 export default {
   data: new SlashCommandBuilder()
