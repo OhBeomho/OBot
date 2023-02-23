@@ -11,8 +11,9 @@ import createRole from "./role/createRole"
 import addRole from "./role/addRole"
 import deleteRole from "./role/deleteRole"
 import removeRole from "./role/removeRole"
+import roleColor from "./role/roleColor"
 
-const commands = [ping, avatar, talkpoints, list, leaderboard, version, kick, createRole, deleteRole, addRole, removeRole]
+const commands = [ping, avatar, talkpoints, list, leaderboard, version, kick, createRole, deleteRole, addRole, removeRole, roleColor]
 const collection = new Collection<string, SlashCommandData>()
 
 for (let command of commands)
