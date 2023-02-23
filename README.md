@@ -1,5 +1,5 @@
-# Update 1.0.3
+# Update 1.0.4
 
 ## Whats new?
-- Changed _.kick_ to _.kick-many_
-- Slash command _/kick_, _/version_ added.
+- Added role commands
+  - _/create-role, /delete-role, /add-role, /remove-role_
