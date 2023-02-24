@@ -1,5 +1,4 @@
-# Update 1.0.4
+# Update 1.0.5
 
 ## Whats new?
-- Added role commands
-  - _/create-role, /delete-role, /add-role, /remove-role_
+- Added /role-list command
