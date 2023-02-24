@@ -2,8 +2,7 @@ import "dotenv/config"
 import { CommandInteraction, EmbedBuilder, SlashCommandBuilder } from "discord.js"
 
 const updateText = `**업데이트 내용**
-- 역할 관련 슬래시 커맨드 추가
-- /help 를 /list 로 이름 변경`
+- /role-list 명령어 추가`
 
 export default {
   data: new SlashCommandBuilder()
