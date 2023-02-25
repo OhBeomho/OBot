@@ -1,4 +1,4 @@
-import { CommandInteraction, SlashCommandBuilder, EmbedBuilder, GuildScheduledEvent } from "discord.js"
+import { CommandInteraction, SlashCommandBuilder, EmbedBuilder } from "discord.js"
 
 export default {
   data: new SlashCommandBuilder()
