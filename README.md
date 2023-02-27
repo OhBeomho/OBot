@@ -1,4 +1,4 @@
-# Update 1.0.5
+# Update 1.0.6
 
 ## Whats new?
 - Added /ban slash command.
