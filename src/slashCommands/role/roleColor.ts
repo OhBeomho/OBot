@@ -1,4 +1,11 @@
-import { ColorResolvable, CommandInteraction, Role, SlashCommandBuilder } from "discord.js"
+import {
+  ColorResolvable,
+  CommandInteraction,
+  PermissionFlagsBits,
+  PermissionsBitField,
+  Role,
+  SlashCommandBuilder
+} from "discord.js"
 
 export default {
   data: new SlashCommandBuilder()
@@ -13,8 +20,14 @@ export default {
   async execute(interaction: CommandInteraction) {
     const color = String(interaction.options.get("color")?.value || "")
     const role = interaction.options.get("role")?.role as Role
-
-    if (!color) {
+    if (
+      !(interaction.member?.permissions as Readonly<PermissionsBitField>).has(
+        PermissionFlagsBits.ManageRoles
+      )
+    ) {
+      await interaction.reply("당신의 권한이 부족합니다.")
+      return
+    } else if (!color) {
       await interaction.reply("색상을 입력해 주세요.")
       return
     } else if (!role) {

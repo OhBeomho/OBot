@@ -1,4 +1,11 @@
-import { CommandInteraction, GuildMember, Role, SlashCommandBuilder } from "discord.js"
+import {
+  CommandInteraction,
+  GuildMember,
+  PermissionFlagsBits,
+  PermissionsBitField,
+  Role,
+  SlashCommandBuilder
+} from "discord.js"
 
 export default {
   data: new SlashCommandBuilder()
@@ -9,10 +16,19 @@ export default {
     )
     .addUserOption((option) => option.setName("user").setDescription("역할을 제거할 사용자")),
   async execute(interaction: CommandInteraction) {
-    const member = (interaction.options.getMember("user") as GuildMember) || interaction.member
+    if (!interaction.inGuild()) return
+
+    const member = (interaction.options.getMember("user") || interaction.member) as GuildMember
     const role = interaction.options.get("role")?.role as Role
 
-    if (!member) {
+    if (
+      !(interaction.member.permissions as Readonly<PermissionsBitField>).has(
+        PermissionFlagsBits.ManageRoles
+      )
+    ) {
+      await interaction.reply("당신의 권한이 부족합니다.")
+      return
+    } else if (!member) {
       await interaction.reply("역할을 제거할 사용자를 선택해 주세요.")
       return
     } else if (!role) {

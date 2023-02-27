@@ -22,9 +22,11 @@ const roleText = `**슬래시 명령어**
 const memberText = `**슬래시 명령어**
 /avatar - 사용자의 아바타를 보여줍니다.
 /kick - 사용자를 추방합니다.
+/ban - 사용자를 밴합니다.
 
 **채팅 명령어**
-.kick-many _mentions_ - 멘션된 사용자들을 모두 추방합니다.`
+.kick-many _mentions_ - 멘션된 사용자들을 모두 추방합니다.
+.ban-many _mentions_ - 멘션된 사용자들을 모두 밴합니다.`
 
 const talkpointsText = `**슬래시 명령어**
 /t-points - 사용자의 t-points 와 t-points 랭킹을 보여줍니다.

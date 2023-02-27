@@ -2,7 +2,9 @@ import "dotenv/config"
 import { CommandInteraction, EmbedBuilder, SlashCommandBuilder } from "discord.js"
 
 const updateText = `**업데이트 내용**
-- /role-list 명령어 추가`
+- /ban 슬래시 명령어 추가
+- .ban-many 채팅 명령어 추가
+- 역할 관련 커맨드 권한 설정`
 
 export default {
   data: new SlashCommandBuilder()

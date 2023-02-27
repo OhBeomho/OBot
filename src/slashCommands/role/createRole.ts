@@ -1,4 +1,10 @@
-import { ColorResolvable, CommandInteraction, SlashCommandBuilder } from "discord.js"
+import {
+  ColorResolvable,
+  CommandInteraction,
+  GuildMember,
+  PermissionFlagsBits,
+  SlashCommandBuilder
+} from "discord.js"
 
 export default {
   data: new SlashCommandBuilder()
@@ -11,10 +17,16 @@ export default {
       option.setName("color").setDescription("역할의 색상 (#rrggbb) 형식으로 입력")
     ),
   async execute(interaction: CommandInteraction) {
+    if (!interaction.inGuild()) return
+
+    const member = interaction.member as GuildMember
     const roleName = String(interaction.options.get("name")?.value || "")
     const roleColor = String(interaction.options.get("color")?.value || "")
 
-    if (!roleName) {
+    if (!member.permissions.has(PermissionFlagsBits.ManageRoles)) {
+      await interaction.reply("당신의 권한이 부족합니다.")
+      return
+    } else if (!roleName) {
       await interaction.reply("역할의 이름을 입력해 주세요.")
       return
     } else if (roleColor && (roleColor.length !== 7 || !/#[a-fA-F\d]{6}/g.test(roleColor))) {

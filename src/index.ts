@@ -38,9 +38,11 @@ client.on(Events.MessageCreate, async (message) => {
     const firstWord = message.content.split(/\s{1,}/)[0]
     const command = chatCommands.get(firstWord.substring(1, firstWord.length))
 
-    if (firstWord === ".clean" && message.mentions.users.has(String(client.user?.id))) {
-      message.reply("저는 제 자신을 추방할 수 없습니다.")
-    } else if (command) {
+    if (firstWord === ".kick-many" && message.mentions.users.has(String(client.user?.id)))
+      await message.reply("저는 제 자신을 추방할 수 없습니다.")
+    else if (firstWord === ".ban-many" && message.mentions.users.has(String(client.user?.id)))
+      await message.reply("저는 제 자신을 밴할 수 없습니다.")
+    else if (command) {
       try {
         await command(message)
       } catch (err) {
