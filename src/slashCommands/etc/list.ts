@@ -21,6 +21,7 @@ const roleText = `**슬래시 명령어**
 
 const memberText = `**슬래시 명령어**
 /avatar - 사용자의 아바타를 보여줍니다.
+/member-info - 해당 서버의 사용자의 정보를 보여줍니다.
 /kick - 사용자를 추방합니다.
 /ban - 사용자를 밴합니다.
 

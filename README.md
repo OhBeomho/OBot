@@ -1,6 +1,5 @@
-# Update 1.0.6
+# Update 1.0.7
 
 ## Whats new?
-- Added /ban slash command.
-- Added .ban-many chat command.
-- Role commands permission
+- Added /member-info command.
+- Changed /t-points command to show member's avatar.

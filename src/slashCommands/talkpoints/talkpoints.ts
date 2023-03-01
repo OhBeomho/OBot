@@ -26,6 +26,7 @@ export default {
       .setColor("Blue")
       .setTitle(user.tag + "님의 T-Points")
       .setDescription(`T-Points: ${member.talkPoints}\nRank: #${rank}`)
+      .setThumbnail(user.avatarURL())
     await interaction.reply({ embeds: [embed] })
   }
 }

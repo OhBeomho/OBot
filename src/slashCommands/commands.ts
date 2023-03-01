@@ -14,6 +14,7 @@ import removeRole from "./role/removeRole"
 import roleColor from "./role/roleColor"
 import roleList from "./role/roleList"
 import ban from "./member/ban"
+import memberinfo from "./member/memberinfo"
 
 const commands = [
   ping,
@@ -29,7 +30,8 @@ const commands = [
   addRole,
   removeRole,
   roleColor,
-  roleList
+  roleList,
+  memberinfo
 ]
 const collection = new Collection<string, SlashCommandData>()
 
